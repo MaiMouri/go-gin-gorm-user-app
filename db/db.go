@@ -1,9 +1,9 @@
 package db
 
 import (
-	"github.com/hanadaUG/go-gin-gorm-todo-app/models"
+	"github.com/MaiMouri/go-gin-gorm-user-app/models"
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
-	_ "github.com/mattn/go-sqlite3"
 )
 
 var db *gorm.DB
@@ -13,7 +13,7 @@ func Initialize() {
 	// ローカル変数dbを初期化することになるので注意する
 
 	// DBのコネクションを接続する
-	db, _ = gorm.Open("mysql", "task.db")
+	db, _ = gorm.Open("mysql", "tester:secret@tcp(db:3306)/test")
 	//if err != nil {
 	//  panic("failed to connect database\n")
 	//}
